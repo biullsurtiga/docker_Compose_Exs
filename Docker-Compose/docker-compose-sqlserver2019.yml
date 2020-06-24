@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  sql2019:
+    image: mcr.microsoft.com/mssql/server:2019-GA-ubuntu-16.04
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: SqlServer2019!
+    ports:
+      - "51436:1433"
+    networks:
+      - sql2019_network
+
+networks: 
+    sql2019_network:
+      driver: bridge

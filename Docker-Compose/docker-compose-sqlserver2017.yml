@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  sql2017:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: SqlServer2017!
+    ports:
+      - "51435:1433"
+    networks:
+      - sql2017_network 
+
+networks: 
+    sql2017_network:
+      driver: bridge
